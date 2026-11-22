@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e36">
+  <meta name="description" content="A free seven-day sleep habits challenge for students.">
+  <title>Sleep Reset | 7-Day Challenge</title>
+  <style>
+    :root{--navy:#101e36;--navy2:#192e50;--ink:#17263f;--muted:#52637d;--purple:#7863d9;--lavender:#e8e4ff;--sky:#c5e9fb;--card:#fff;--line:#e5e9f3;--bg:#f6f7fc;--mint:#d8f5e9}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:#5241bd}button{font:inherit}button:focus-visible,a:focus-visible{outline:3px solid #a9bafc;outline-offset:3px}
+    .hero{background:radial-gradient(circle at 88% 14%,#344a7c 0,transparent 34%),linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;position:relative;overflow:hidden}
+    .hero:after{content:'✦    ✧   ✦';position:absolute;right:9%;top:80px;color:#aabaff;opacity:.45;letter-spacing:22px;font-size:27px;pointer-events:none}
+    .wrap{max-width:1030px;margin:0 auto;padding:0 24px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0}.brand{font-weight:800;letter-spacing:.2px;font-size:1.1rem}.topnav{display:flex;gap:22px;font-size:.92rem}.topnav a{color:#dde4ff;text-decoration:none}.topnav a:hover{text-decoration:underline}
+    .hero-content{padding:68px 0 93px;max-width:720px;position:relative;z-index:1}.eyebrow{display:inline-block;background:#34446c;border:1px solid #6475a0;border-radius:30px;padding:7px 14px;color:#e6e5ff;font-size:.8rem;font-weight:750;letter-spacing:1.1px;text-transform:uppercase}.hero h1{font-size:clamp(2.7rem,6vw,4.8rem);line-height:1.08;letter-spacing:-2px;margin:19px 0}.hero h1 span{color:#b9abff}.hero p{color:#d2ddf2;max-width:540px;font-size:1.1rem;margin:0 0 27px}.btn{display:inline-block;background:#8974f0;color:white;border:0;padding:13px 23px;border-radius:12px;cursor:pointer;font-weight:750;text-decoration:none;box-shadow:0 7px 17px #111b3750}.btn:hover{background:#735ed9}.btn-outline{background:#fff;color:#503ebb;border:1px solid #dcd8fc;box-shadow:none}.btn-outline:hover{background:#f2efff}.hero .note{display:block;margin-top:20px;color:#b9c7df;font-size:.86rem}
+    main{padding:46px 0 75px}.section-head{margin:0 0 22px}.section-head h2{font-size:clamp(1.7rem,4vw,2.2rem);letter-spacing:-.8px;margin:0 0 6px}.section-head p{margin:0;color:var(--muted)}.panel{background:var(--card);border:1px solid var(--line);border-radius:19px;box-shadow:0 9px 30px #1a2a4b08;padding:25px}
+    .introgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-bottom:52px}.introgrid h2{font-size:1.5rem;margin:0 0 10px}.introgrid p{margin:0;color:var(--muted)}.stat{background:linear-gradient(135deg,#e6e2ff,#e1f5ff);display:flex;flex-direction:column;justify-content:center}.stat .num{font-size:2.3rem;font-weight:850;line-height:1.15;color:#4a3db0}.stat small{color:#4d5a78;margin-top:8px}
+    .challenge-top{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:14px}.counter{font-weight:800;color:#5142b7;background:#efebff;border-radius:100px;padding:8px 13px;white-space:nowrap}.progress-track{height:12px;border-radius:100px;background:#e7e8f1;overflow:hidden;margin:0 0 22px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#7969e9,#6ec7c6);border-radius:100px;transition:width .2s}.days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.day{border:1px solid var(--line);background:#fff;border-radius:16px;padding:19px;transition:border-color .2s,background .2s}.day.complete{background:#f0fbf6;border-color:#9bd9bf}.day-head{display:flex;gap:13px;justify-content:space-between;align-items:center}.tag{font-size:.76rem;color:#6352c5;font-weight:850;letter-spacing:1px;text-transform:uppercase}.day h3{margin:5px 0 8px;font-size:1.06rem}.day p{color:var(--muted);font-size:.92rem;margin:0 0 16px}.check{display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:700;font-size:.9rem}.check input{width:20px;height:20px;accent-color:#6355c7;cursor:pointer}.check span{user-select:none}.small-note{color:var(--muted);font-size:.85rem}.row-between{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:17px}.reset{background:transparent;color:#6b56c8;border:1px solid #cfc7ff;padding:8px 14px;border-radius:9px;cursor:pointer}.reset:hover{background:#f1edff}
+    .tipgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:24px}.tip{background:white;border:1px solid var(--line);padding:22px;border-radius:16px}.tip .emoji{font-size:1.7rem}.tip h3{font-size:1rem;margin:11px 0 5px}.tip p{font-size:.91rem;color:var(--muted);margin:0}.resource{margin-top:54px;background:#eae7ff;border-radius:20px;padding:27px}.resource h2{margin:0 0 7px}.resource p{margin:0 0 13px;color:#4a5673}.resource a{display:inline-block;margin:0 22px 8px 0;font-weight:700}.privacy{font-size:.83rem;color:#64728a;margin-top:14px}footer{background:#101e36;color:#bccae0;padding:25px 0;text-align:center;font-size:.85rem}
+    @media(max-width:750px){.introgrid,.days{grid-template-columns:1fr}.tipgrid{grid-template-columns:1fr 1fr}.hero-content{padding:56px 0 75px}.topnav{gap:12px}.challenge-top{flex-wrap:wrap}}
+    @media(max-width:500px){.tipgrid{grid-template-columns:1fr}.topbar{align-items:start}.topnav{font-size:.8rem}.hero h1{letter-spacing:-1px}.wrap{padding:0 18px}.panel{padding:20px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar"><div class="brand">☾ Sleep Reset</div><nav class="topnav" aria-label="Main navigation"><a href="#challenge">Challenge</a><a href="#tips">Tips</a><a href="#resources">Resources</a></nav></div>
+      <div class="hero-content"><span class="eyebrow">7 days · Small steps · Better habits</span><h1>Better nights.<br><span>Better days.</span></h1><p>One more episode. One more scroll. One less hour of sleep. Ready to change the pattern? Try seven simple habits, one day at a time.</p><a class="btn" href="#challenge">Start the 7-day challenge →</a><span class="note">Free · No account required · Designed for students</span></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="introgrid">
+      <section class="panel"><h2>Why make sleep a priority?</h2><p>Sleep supports attention, memory, mood, and overall health. A regular routine can make mornings more manageable and help you feel ready for the day.</p></section>
+      <section class="panel stat" aria-label="Adult sleep recommendation"><div class="num">7+ hours</div><strong>Recommended for most adults ages 18–60</strong><small>Source: Centers for Disease Control and Prevention. Teens ages 13–17 generally need 8–10 hours.</small></section>
+    </div>
+    <section id="challenge" aria-labelledby="challenge-title">
+      <div class="section-head"><h2 id="challenge-title">Your 7-Day Sleep Reset</h2><p>Try one new habit each day. Check it off when you're done. You can also keep practicing earlier habits as you go.</p></div>
+      <div class="panel">
+        <div class="challenge-top"><div><strong>Your challenge progress</strong><div class="small-note" id="progress-message" aria-live="polite">Every small step counts.</div></div><span class="counter" id="progress-count">0 of 7 complete</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Challenge progress" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="days" id="days">
+          <article class="day"><div class="day-head"><span class="tag">Day 1</span><span aria-hidden="true">🌙</span></div><h3>Choose a consistent wake-up time</h3><p>Pick a realistic time you can aim for on most days, including weekends.</p><label class="check"><input type="checkbox" data-day="1"><span>I tried this habit</span></label></article>
+          <article class="day"><div class="day-head"><span class="tag">Day 2</span><span aria-hidden="true">📱</span></div><h3>Put your phone away</h3><p>Try switching off screens at least 30 minutes before bedtime.</p><label class="check"><input type="checkbox" data-day="2"><span>I tried this habit</span></label></article>
+          <article class="day"><div class="day-head"><span class="tag">Day 3</span><span aria-hidden="true">☀️</span></div><h3>Make time to move</h3><p>Build some comfortable movement or physical activity into your day.</p><label class="check"><input type="checkbox" data-day="3"><span>I tried this habit</span></label></article>
+          <article class="day"><div class="day-head"><span class="tag">Day 4</span><span aria-hidden="true">☕</span></div><h3>Move caffeine earlier</h3><p>Try avoiding caffeinated drinks during the afternoon and evening.</p><label class="check"><input type="checkbox" data-day="4"><span>I tried this habit</span></label></article>
+          <article class="day"><div class="day-head"><span class="tag">Day 5</span><span aria-hidden="true">🛏️</span></div><h3>Make your room sleep-friendly</h3><p>Keep your sleep space quiet, comfortable, and as dark as practical.</p><label class="check"><input type="checkbox" data-day="5"><span>I tried this habit</span></label></article>
+          <article class="day"><div class="day-head"><span class="tag">Day 6</span><span aria-hidden="true">📖</span></div><h3>Create a wind-down routine</h3><p>Try a calming, screen-free activity such as reading or relaxing music.</p><label class="check"><input type="checkbox" data-day="6"><span>I tried this habit</span></label></article>
+          <article class="day"><div class="day-head"><span class="tag">Day 7</span><span aria-hidden="true">✨</span></div><h3>Keep your favorite habits</h3><p>Choose one or two changes that worked for you and plan to continue them.</p><label class="check"><input type="checkbox" data-day="7"><span>I tried this habit</span></label></article>
+        </div>
+        <div class="row-between"><span class="small-note">Your checkmarks are saved in this browser on this device.</span><button class="reset" type="button" id="reset">Reset my progress</button></div>
+      </div>
+    </section>
+    <section id="tips" style="margin-top:55px" aria-labelledby="tips-title"><div class="section-head"><h2 id="tips-title">Better sleep starts with small habits</h2><p>You don't need a perfect routine. Start with a change you can repeat.</p></div><div class="tipgrid"><div class="tip"><div class="emoji" aria-hidden="true">🕒</div><h3>Keep a routine</h3><p>Try going to bed and waking up around the same time each day.</p></div><div class="tip"><div class="emoji" aria-hidden="true">🌙</div><h3>Wind down</h3><p>Give yourself some screen-free time before bed to help transition into sleep.</p></div><div class="tip"><div class="emoji" aria-hidden="true">🌿</div><h3>Set the environment</h3><p>A quiet, cool, comfortable room can help support better sleep.</p></div></div></section>
+    <section id="resources" class="resource" aria-labelledby="resources-title"><h2 id="resources-title">Want to learn more?</h2><p>Explore practical sleep recommendations from trusted public health organizations.</p><a href="https://www.cdc.gov/sleep/about/index.html" target="_blank" rel="noopener noreferrer">CDC: About Sleep ↗</a><a href="https://health.nih.gov/health-topics-a-z/healthy-sleep" target="_blank" rel="noopener noreferrer">NIH: Healthy Sleep ↗</a><p class="privacy">This is an educational challenge, not medical advice. Sleep needs vary by age and individual. If sleep problems persist, consider talking with a healthcare professional.</p></section>
+  </main>
+  <footer><div class="wrap">Sleep Reset · One better habit at a time · Made for a student persuasive speech</div></footer>
+  <script>
+    (function(){
+      'use strict';
+      const storageKey='sleep-reset-checklist-v1';
+      const checks=Array.from(document.querySelectorAll('input[data-day]'));
+      const count=document.getElementById('progress-count');
+      const fill=document.getElementById('progress-fill');
+      const bar=document.getElementById('progress-track');
+      const message=document.getElementById('progress-message');
+      function read(){try{const saved=JSON.parse(localStorage.getItem(storageKey));return Array.isArray(saved)?saved:[]}catch(e){return []}}
+      function save(days){try{localStorage.setItem(storageKey,JSON.stringify(days))}catch(e){/* Browser may disable storage; current session still works. */}}
+      function update(){const done=checks.filter(c=>c.checked).length;count.textContent=`${done} of 7 complete`;fill.style.width=`${done/7*100}%`;bar.setAttribute('aria-valuenow',String(done));message.textContent=done===7?'Amazing work! Choose the habits you want to keep.':done===0?'Every small step counts.':`Nice progress! ${7-done} challenge${7-done===1?'':'s'} to go.`;checks.forEach(c=>c.closest('.day').classList.toggle('complete',c.checked))}
+      const saved=read();checks.forEach(c=>{c.checked=saved.includes(Number(c.dataset.day));c.addEventListener('change',()=>{save(checks.filter(x=>x.checked).map(x=>Number(x.dataset.day)));update()})});
+      document.getElementById('reset').addEventListener('click',()=>{if(!confirm('Clear all seven checkmarks?'))return;checks.forEach(c=>{c.checked=false});save([]);update()});
+      update();
+    })();
+  </script>
+</body>
+</html>
